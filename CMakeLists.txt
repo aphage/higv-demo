@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-include(arm-linux.cmake)
+include(${PROJECT_SOURCE_DIR}/arm-linux.cmake)
 
 project(higv-demo
     VERSION "0.0.1"
