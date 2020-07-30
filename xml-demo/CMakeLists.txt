@@ -1,7 +1,7 @@
 project(xml-demo)
 
 add_executable(xml-demo
-main.cpp
+src/main.cpp
 )
 
 target_link_libraries(xml-demo
@@ -12,22 +12,19 @@ target_link_libraries(xml-demo
     stdc++
     -rdynamic
 
-    higv/libhigv.a
-    higv/libhigo.a
-    higv/libhigoadp.a
-    higv/libtde.a
-    higv/libfreetype.a
-    higv/libharfbuzz.a
-    higv/libjpeg.a
-    higv/libpng.a
-    higv/libsecurec.a
-    higv/libz.a
+    higv.a
+    higo.a
+    higoadp.a
+    tde.a
+    freetype.a
+    harfbuzz.a
+    jpeg.a
+    png.a
+    securec.a
+    z.a
 
-    mpp/libmpi.a
-    mpp/libdnvqe.a
-    mpp/libupvqe.a
-    mpp/libVoiceEngine.a
+    mpi.a
+    dnvqe.a
+    upvqe.a
+    VoiceEngine.a
 )
-
-message(STATUS "PROJECT_NAME : ${PROJECT_NAME}")
-message(STATUS "CMAKE_C_FLAGS : ${CMAKE_C_FLAGS}")
