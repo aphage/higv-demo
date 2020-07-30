@@ -4,6 +4,7 @@ Middleware_V2.0.2.1
 
 目录结构
 
+``` text
 |- api-demo
 |- xml-demo
 |- lib
@@ -11,6 +12,7 @@ Middleware_V2.0.2.1
 |--|-- fonts
 |--|-- images
 |--|-- pinyin
+```
 
 ``` bash
 mkdir build && cd build
