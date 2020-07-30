@@ -1,7 +1,12 @@
 # higv-demo
-higv demo
 
 Middleware_V2.0.2.1
+
+目录结构
+
+|- api-demo
+|- xml-demo
+|- lib
 
 Tips
 
