@@ -1,4 +1,4 @@
-cmake_minimum_required(3.5)
+cmake_minimum_required(VERSION 3.5)
 
 project(higv-demo
     VERSION "0.0.1"
