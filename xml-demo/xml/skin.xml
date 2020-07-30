@@ -1,0 +1,48 @@
+
+<skin
+    id="skin_normal"
+    type="color"
+    isnodrawbg="yes"
+    linewidth="0"
+    ltopidx=""
+    toplineidx=""
+    rtopidx=""
+    llineidx=""
+    bgidx=""
+    rlineidx=""
+    lbtmidx=""
+    btmlineidx=""
+    rbtmidx=""
+    fgidx="" />
+
+<skin
+    id="skin_white"
+    type="color"
+    isnodrawbg="no"
+    linewidth="0"
+    ltopidx=""
+    toplineidx=""
+    rtopidx=""
+    llineidx=""
+    bgidx="0xFFFFFFFF"
+    rlineidx=""
+    lbtmidx=""
+    btmlineidx=""
+    rbtmidx=""
+    fgidx="" />
+
+<skin
+    id="skin_border_1"
+    type="color"
+    isnodrawbg="yes"
+    linewidth="1"
+    ltopidx=""
+    toplineidx="0xFF400040"
+    rtopidx=""
+    llineidx="0xFF400040"
+    bgidx=""
+    rlineidx="0xFF400040"
+    lbtmidx=""
+    btmlineidx="0xFF400040"
+    rbtmidx=""
+    fgidx="" />

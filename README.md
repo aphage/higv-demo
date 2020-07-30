@@ -7,10 +7,14 @@ Middleware_V2.0.2.1
 |- api-demo
 |- xml-demo
 |- lib
+|- resource
+|--|-- fonts
+|--|-- images
+|--|-- pinyin
 
 ``` bash
 mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE:string=../arm-linux.cmake && make
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE:string=../arm-linux.cmake && make && make install
 ```
 
 Tips

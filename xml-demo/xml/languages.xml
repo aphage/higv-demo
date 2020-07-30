@@ -1,0 +1,10 @@
+<language
+    id="language"
+    languageinfo="en:en;zh:简体中文"
+    locale="en">
+
+    <lanstr
+        id="str_hello"
+        en="Hello"
+		zh="你好"/>
+</language>
