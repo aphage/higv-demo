@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
 
-include(arm-linux.cmake)
-
 project(higv-demo
     VERSION "0.0.1"
     DESCRIPTION "This is a demo"

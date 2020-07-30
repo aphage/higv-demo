@@ -8,6 +8,11 @@ Middleware_V2.0.2.1
 |- xml-demo
 |- lib
 
+``` bash
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE:string=../arm-linux.cmake && make
+```
+
 Tips
 
 - 任何控件必须设置皮肤属性，因为皮肤属性是必须的，不然解析 bin 文件的时候会报错，导致程序退出
