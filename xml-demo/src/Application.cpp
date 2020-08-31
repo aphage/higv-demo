@@ -1,62 +1,15 @@
 #include <iostream>
 
-#include <hi_gv.h>
-#include <hi_gv_log.h>
-#include <hi_gv_parser.h>
+#include "hi_gv.h"
+#include "hi_gv_log.h"
+#include "hi_gv_parser.h"
 
-typedef struct {
-    const char* name;
-    const char* type;
-}LANGUAGES_TYPE;
-
-#define SCREEN_WIDTH 480    //屏幕宽度
-#define SCREEN_HEIGHT 854   //屏幕高度
-#define SCREEN_ROTATE HIGV_ROTATE_180 //屏幕旋转
-
-#define APP_NAME "app"
-#define APP_START_WINDOW PAGE_MAIN
-#define APP_BIN_FILE_NAME "resource/app.bin"
-
-#define APP_LANGUAGE LAN_ZH     //默认语言
-
-#define DEFAULT_FONT_PATH "resource/fonts/simhei.ttf" //字体
-#define DEFAULT_FONT_SIZE 18
-
-LANGUAGES_TYPE g_languages[] = {
-    {"resource/languages/en.lang", LAN_EN},
-    {"resource/languages/zh.lang", LAN_ZH}
-};
-
-HI_HANDLE CreateFont(std::string font_path, uint16_t font_size) {
-
-    HI_RESID resid = HI_NULL;
-    auto status = HI_GV_Res_CreateID(font_path.c_str(), HIGV_RESTYPE_FONT, &resid);
-    if(status != HI_SUCCESS) {
-        return HI_NULL;
-    }
-
-    HIGV_FONT_S info = {0};
-    info.SbFontID = resid;
-    info.MbFontID = 0;
-    info.Size = font_size;
-    info.bBold = HI_FALSE;
-    info.bItalic = HI_FALSE;
-
-    HI_HANDLE font_handle = HI_NULL;
-    status = HI_GV_Font_Create(&info, &font_handle);
-    if(status != HI_SUCCESS) {
-        HI_GV_Res_DestroyID(resid);
-        return HI_NULL;
-    }
-
-    return font_handle;
-}
-
+#include "config/config.h"
 
 int main(int argc,char* argv[]) {
     
     HI_GV_SetVsyncType(HIGV_VSYNC_SW);
-    HI_GV_Log_SetLevel(HIGV_LOG_DEBUG);
+    HI_GV_Log_SetLevel(HI_NULL, HIGV_LOG_DEBUG);
 
     HIGO_LAYER_INFO_S layerInfo = {
         SCREEN_WIDTH, SCREEN_HEIGHT,//图层在屏幕上显示宽度，必须大于0   图层在屏幕上显示高度，必须大于0
@@ -102,7 +55,7 @@ int main(int argc,char* argv[]) {
 
         //加载语言
         for (int i = 0; i < (sizeof(g_languages) / sizeof(g_languages[0])); i++) {
-            HI_GV_Lan_Register(g_languages[i].name, g_font, g_languages[i].type);
+            HI_GV_Lan_Register(g_languages[i].name, font_handle, g_languages[i].type);
         }
         //设置当前语种
         HI_GV_Lan_Change(APP_LANGUAGE);

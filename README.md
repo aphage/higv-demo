@@ -31,6 +31,8 @@ Tips
 
 - 使用控件前一定要看`标签使用指南`文档，查看那些属性是必须的
 
+- 推荐使用简单控件实现比较复杂的布局
+
 ## 关于控件背景穿透窗口
 
 控件没有设置背景颜色或者图片，isnodrawbg 设置成 yes
@@ -84,8 +86,13 @@ HI_GV_Widget_Paint(self, NULL); // or HI_GV_Widget_Update(self, NULL)
 
 ## HI_GV_Widget_SetTextByID 不工作
 
-这里的 id 是要用 `HI_GV_FontSet_Create` api 创建返回后的 id，
-xml2bin 并没有生成关于语言的资源，也许这是一个 BUG 🐛
+这是一个 BUG 🐛
+
+使用 xml2bin 生成的 language.h 中的 id 不工作
+
+或许这里的 id 是要用 `HI_GV_FontSet_Create` api 创建返回后的 id
+
+或者可以使用 HI_GV_Lan_GetCurLangID + HI_GV_Lan_GetLangString + HI_GV_Widget_SetText
 
 ## clock 控件显示错误，直接显示 UTC 时间 (1970 年)  没有进行转换普通时间
 
@@ -129,3 +136,16 @@ xml2bin 并没有生成关于语言的资源，也许这是一个 BUG 🐛
 
 这是一个 BUG 🐛
 
+## ListBox 无法显示，报错无法找到资源，参数错误
+
+列宽溢出导致的，调整列宽
+
+## MessageBox none 以外风格无法显示
+
+官方文档标签文档描述和实际不同，有些属性文档写着不是必须的，但是实际是必须的，比如 icon 属性，title high 不能为 0
+
+官方提供的 demo 能正常显示，但是把 xml 中 messagebox 复制过来后，除了删除一些原来的事件 callback
+
+无法显示，但是窗口确实是存在的，点击是有消息 callback 的
+
+- 最后我是单独做了一个窗口，用来替换 MessageBox 控件 ，使用 Api 注册按钮 callback

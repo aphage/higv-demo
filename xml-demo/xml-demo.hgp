@@ -5,8 +5,8 @@
 
 PROJECT_PATH = .\
 
-PICTURE_PATH = $(PROJECT_PATH)\..\
-FONT_PATH = $(PROJECT_PATH)\..\
+PICTURE_PATH = $(PROJECT_PATH)\
+FONT_PATH = $(PROJECT_PATH)\
 OUTPUT_PATH = $(PROJECT_PATH)\output
 
 // Diagram and resource files

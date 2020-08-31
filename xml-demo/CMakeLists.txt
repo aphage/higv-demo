@@ -4,6 +4,11 @@ add_executable(${PROJECT_NAME}
 src/main.cpp
 )
 
+target_include_directories(${PROJECT_NAME}
+${PROJECT_SOURCE_DIR}
+)
+
+
 install_targets(${PROJECT_NAME} TARGETS ${CMAKE_SOURCE_DIR}/bin)
 install_targets(${PROJECT_NAME} DIRECTORY ${CMAKE_SOURCE_DIR}/resource DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 
